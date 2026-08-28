@@ -6,16 +6,16 @@ TypeScript and JavaScript client for [yo](https://github.com/tamnd/yo), an embed
 
 Nothing to use yet, and the package on npm says so out loud.
 
-`@yodb/core` is published at `0.0.0`. Importing it succeeds and does nothing, on purpose, because a placeholder that throws on import is a broken artifact in a stranger's dependency tree and that is a real cost to impose on somebody for the sake of holding a name. Calling anything is what tells you where you are:
+`@yodb/core` is published at `0.0.1`. Importing it succeeds and does nothing, on purpose, because a placeholder that throws on import is a broken artifact in a stranger's dependency tree and that is a real cost to impose on somebody for the sake of holding a name. Calling anything is what tells you where you are:
 
 ```js
 import db from "@yodb/core";
 db.open("app.yo");
-// Error: Placeholder. yo is an embedded multi-model database in Rust; this package
-// will hold its Node.js binding. Not yet usable. See https://github.com/tamnd/yo
+// Error: yo is not usable yet. This is a reserved placeholder at 0.0.1;
+// see https://github.com/tamnd/yo
 ```
 
-Every other ecosystem's placeholder raises one shared sentence, and this one does not, because it was published by hand before the other five were generated. The wording here is a known divergence, recorded in the specification rather than quietly left; the version number is not being burned to correct a string.
+`0.0.1` and not `0.0.0` because of that sentence. This was the one placeholder published by hand, and it went out throwing its own package description instead of the sentence every other ecosystem raises. npm never lets a version number be reused, so the correction had to ship as a new version, and `@yodb/core@0.0.0` still carries the old wording and always will. Every other ecosystem moved to `0.0.1` on the same day, so one version number still means one artifact everywhere.
 
 The engine is at `M0`. The record plane and the file format are `M1` and in progress, so there is nothing for this binding to sit on top of yet. Watch the [milestones](https://github.com/tamnd/yo/milestones).
 
